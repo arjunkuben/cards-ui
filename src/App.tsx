@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container } from 'react-bootstrap';
+import './App.scss';
+import CardComponent from './components/CardComponent/CardComponent';
+import ProfileDetails from './components/ProfileDetails/ProfileDetails';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<Container fluid>
+				<h1 className="display-4 text-center">User Profile</h1>
+				<Switch>
+					<Route path="/:id">
+						<ProfileDetails />
+					</Route>
+					<Route path="/">
+						<CardComponent />
+					</Route>
+				</Switch>
+			</Container>
+		</Router>
+	);
 }
 
 export default App;
