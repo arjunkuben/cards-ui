@@ -8,7 +8,7 @@ function App() {
 	return (
 		<Router>
 			<Container fluid>
-				<h1 className="display-4 text-center">User Profile</h1>
+				<h1 className="display-4 text-center">Cards Details</h1>
 				<Switch>
 					<Route path="/:id">
 						<ProfileDetails />
